@@ -11,7 +11,16 @@ namespace PanDatafilesConsole
     {
         static void Main(string[] args)
         {
-
+            myclass cl = new myclass();
+            Console.WriteLine(INI.GetInfoAboutType<myclass>(cl));
+            Console.ReadLine();
         }
+    }
+    class myclass
+    {
+        public int a = 1;
+        private int b = 2;
+        public int c = 3;
+        public string s = "str";
     }
 }
