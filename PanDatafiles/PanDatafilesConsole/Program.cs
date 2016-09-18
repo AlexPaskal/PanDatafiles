@@ -13,6 +13,8 @@ namespace PanDatafilesConsole
         {
             myclass cl = new myclass();
             Console.WriteLine(INI.GetInfoAboutType<myclass>(cl));
+            INI.SetField<myclass>(cl, "a", 3);
+            Console.WriteLine(INI.GetInfoAboutType<myclass>(cl));
             Console.ReadLine();
         }
     }

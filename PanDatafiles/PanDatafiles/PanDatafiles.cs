@@ -38,5 +38,13 @@ namespace PanDatafiles
 
             return res;
         }
+
+        public static void SetField<T>(T obj, string fieldname, object fieldvalue)
+        {
+            System.Type type = typeof(T);
+            System.Reflection.FieldInfo field = type.GetField(fieldname, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+
+            field.SetValue(obj, fieldvalue);
+        }
     }
 }
