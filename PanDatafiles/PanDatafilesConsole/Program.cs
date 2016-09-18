@@ -12,9 +12,14 @@ namespace PanDatafilesConsole
         static void Main(string[] args)
         {
             myclass cl = new myclass();
-            Console.WriteLine(INI.GetInfoAboutType<myclass>(cl));
-            INI.SetField<myclass>(cl, "a", 3);
-            Console.WriteLine(INI.GetInfoAboutType<myclass>(cl));
+            INI cfile = new INI(@"D:/alex1.ini");
+            Console.WriteLine(INI.GetInfoAboutField(cl));
+            INI.SetField(cl, "s", DateTime.Now.ToShortTimeString());
+            Console.WriteLine(INI.GetInfoAboutField(cl));
+            //cfile.WriteToFile(cl);
+
+            cfile.ReadFromFile<myclass>(ref cl);
+            int a = 9;
             Console.ReadLine();
         }
     }
